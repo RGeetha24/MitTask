@@ -38,10 +38,10 @@ class Employee extends Controller
                 ],
                 [
 
-                    'name.required'=>'Employee Name Required',
+                    'emp_name.required'=>'Employee Name Required',
                     'salary.required'=>'Salary Required',
-                    'designation.required'=>'Designation Required',
-                    'department.required'=>'Department Required',
+                    'desc_id.required'=>'Designation Required',
+                    'dept_id.required'=>'Department Required',
 
 
                 ]
