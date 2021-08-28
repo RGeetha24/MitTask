@@ -30,20 +30,23 @@ Route::group(['middleware' => ['auth','admin']], function(){
         return view('layouts.admin');
     });
     Route::get('/designation', [Designation::class, 'index']);
+    Route::post('designation-add',[Designation::class,'descadd']);
+    Route::get('desc-edit/{id}',[Designation::class,'edit']);
+    Route::post('desc-update/{id}',[Designation::class,'update']);
+    Route::get('desc-delete/{id}',[Designation::class,'delete']);
 
     Route::get('/department', [Deparment::class, 'index']);
-    
+    Route::post('department-add',[Deparment::class,'deptadd']);
+    Route::get('edit/{id}',[Deparment::class,'edit']);
+    Route::post('dept-update/{id}',[Deparment::class,'update']);
+    Route::get('delete/{id}',[Deparment::class,'delete']);
+
     Route::get('/employee', [Employee::class, 'index']);
     Route::post('addemp',[Employee::class,'addemp'])->name('addemp');
     Route::get('viewemp',[Employee::class,'viewemp'])->name('viewemp');
     Route::get('emp-edit/{id}',[Employee::class,'edit']);
-    Route::post('emp-update/{id}',[Employee::class,'update']);
+    Route::put('emp-update/{id}',[Employee::class,'update']);
     Route::get('emp-delete/{id}',[Employee::class,'delete']);
-
-
-
-
-
 
 
 });
